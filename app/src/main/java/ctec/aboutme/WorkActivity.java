@@ -16,25 +16,21 @@ public class WorkActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_work);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.content_work);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        SchoolButton = (Button) findViewById(R.id.School);
+
+        setupListeners();
     }
 
-    private void setupListeners() {
-        SchoolButton.setOnClickListener(new View.OnClickListener() {
+    private void setupListeners()
+    {
+        SchoolButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View buttonView) {
-                Intent myIntent = new Intent(buttonView.getContext(), SchoolActivity.class);
+            public void onClick(View buttonView)
+            {
+                Intent myIntent = new Intent(SchoolButton.getContext(), SchoolActivity.class);
                 startActivityForResult(myIntent, 0);
             }
         });
