@@ -9,28 +9,28 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
-public class FamilyActivity extends AppCompatActivity
+public class skateboardingActivity extends AppCompatActivity
 {
-    private Button skateboardingButton;
+    private Button HomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family);
+        setContentView(R.layout.activity_skateboarding);
 
-        skateboardingButton = (Button) findViewById(R.id.Skate);
+        HomeButton = (Button) findViewById(R.id.house);
 
         setupListeners();
     }
 
     private void setupListeners()
     {
-        skateboardingButton.setOnClickListener(new View.OnClickListener()
+        HomeButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View ButtonView)
             {
-               Intent myIntent = new Intent(skateboardingButton.getContext(),skateboardingActivity.class);
+               Intent myIntent = new Intent(HomeButton.getContext(), HomeActivity.class);
                startActivityForResult(myIntent, 0);
             }
         });
